@@ -11,8 +11,13 @@ context: Question: What is (9 + 8) * 2? Answer:
 completion: 34
 ```
 
-
 The complexity level of these problems is appropriate for modern ~8B parameter LLMs. Short prompts also avoid context window limitations, allowing us to isolate the effect of minor prompt modifications. This dataset is also part of the lm-evaluation-harness benchmark.
+
+The dataset is loaded via `datasets` library from huggingface hub.
+
+## Code
+
+Open `arithmetic_robustness.py`, set the `model_name` variable to the model name of interest and run.
 
 ## Methodology
 
