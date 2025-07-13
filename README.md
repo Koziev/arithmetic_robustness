@@ -45,7 +45,7 @@ Modified: `What is ( 9+8)   * 2  ?`
 - **Prompt Format**: Fixed across all tested models (no model-specific optimization)
 - **Generation Paradigm**: Greedy decoding with answer extraction via `<start>number</start>` pattern
 - **Chat Template**: Standard template applied via tokenizer's `apply_chat_template` with `enable_thinking=False`
-- **Statistical Test**: [McNemar's test](https://en.wikipedia.org/wiki/McNemar%27s_test) (p<0.05 threshold) for significance testing
+- **Statistical Test**: [McNemar's test](https://en.wikipedia.org/wiki/McNemar%27s_test) (p-value<0.05 threshold) for significance testing
 
 *Note*: McNemar's test becomes unreliable when failure rates are very low (e.g., for Qwen3-32B's near-perfect accuracy).
 
