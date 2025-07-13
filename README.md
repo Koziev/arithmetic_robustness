@@ -51,7 +51,7 @@ Modified: `What is ( 9+8)   * 2  ?`
 
 ## Results
 
-| Model                                  | Instruction-following Acc. | Population | Original Acc. | Distorted Acc. | Significant Difference |
+| Model                                  | Instruction-following Acc. (↑) | Population | Original Acc. (↑) | Distorted Acc. (↑) | Significant Difference |
 |----------------------------------------|----------------------------|------------|---------------|----------------|------------------------|
 | Qwen/Qwen3-14B                         | 1.0                        | 2000       | 0.946         | 0.964          | True                   |
 | Qwen/Qwen3-8B                          | 1.0                        | 2000       | 0.897         | 0.939          | True                   |
@@ -62,10 +62,10 @@ Modified: `What is ( 9+8)   * 2  ?`
 | HuggingFaceTB/SmolLM2-1.7B-Instruct    | 0.972                      | 1890       | 0.0           | 0.0            | True                   |
 
 **Column Descriptions:**
-- **Instruction-following accuracy**: Ratio of responses containing the `<start>number</start>` pattern
+- **Instruction-following acc.**: Ratio of responses containing the `<start>number</start>` pattern; higher is better
 - **Population**: Valid response pairs (both original/modified prompts contained extractable answers)
-- **Original Acc.**: Accuracy with unmodified prompts
-- **Distorted Acc.**: Accuracy with whitespace-modified prompts
+- **Original Acc.**: Accuracy with unmodified prompts; higher is better
+- **Distorted Acc.**: Accuracy with whitespace-modified prompts; higher is better
 - **Significant Difference**: McNemar's test result (p<0.05)
 
 ## Key Findings
