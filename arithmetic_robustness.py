@@ -68,8 +68,9 @@ def report(hits_original, hits_distorted):
 
 
 if __name__ == '__main__':
+    use_cache = True
     #model_name = "Qwen/Qwen3-0.6B"
-    #model_name = "Qwen/Qwen3-8B"
+    model_name = "Qwen/Qwen3-8B"
     #model_name = "Qwen/Qwen3-14B"
     #model_name = "microsoft/Phi-3.5-mini-instruct"
     #model_name = "t-tech/T-lite-it-1.0"
@@ -77,9 +78,10 @@ if __name__ == '__main__':
     #model_name = "ai-sage/GigaChat-20B-A3B-instruct"
     #model_name = "mistralai/Mistral-7B-Instruct-v0.3"
     #model_name = "HuggingFaceTB/SmolLM2-1.7B-Instruct"
-    model_name = "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B"
-    #model_name = "GSAI-ML/LLaDA-8B-Instruct"
     #model_name = "tiiuae/falcon-7b-instruct"
+
+    #LlaDa model requires kv cache be disabled.
+    #model_name, use_cache = "GSAI-ML/LLaDA-8B-Instruct", False
 
     tokenizer = transformers.AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
     model = transformers.AutoModelForCausalLM.from_pretrained(model_name, device_map="auto", torch_dtype=torch.bfloat16, trust_remote_code=True)
@@ -96,6 +98,7 @@ if __name__ == '__main__':
                        'top_p': None,
                        'top_k': None,
                        #'typical_p': args.typical_p,
+                       'use_cache': use_cache
                        }
 
     # ----------------------------------------------------------------------------------
