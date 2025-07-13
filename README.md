@@ -11,13 +11,20 @@ context: Question: What is (9 + 8) * 2? Answer:
 completion: 34
 ```
 
-The complexity level of these problems is appropriate for modern ~8B parameter LLMs. Short prompts also avoid context window limitations, allowing us to isolate the effect of minor prompt modifications. This dataset is also part of the lm-evaluation-harness benchmark.
+The complexity level of these problems is appropriate for modern ~8B parameter LLMs. Short prompts also avoid context window limitations, allowing us to isolate the effect of minor prompt modifications. This dataset is also included in the [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness/tree/main/lm_eval/tasks/arithmetic) benchmark.
 
 The dataset is loaded via `datasets` library from huggingface hub.
 
 ## Code
 
-Open `arithmetic_robustness.py`, set the `model_name` variable to the model name of interest and run.
+To run the analysis:
+
+1) Open [arithmetic_robustness.py](arithmetic_robustness.py)
+
+2) Set the `model_name` variable to your target model
+
+3) Execute the script
+
 
 ## Methodology
 
